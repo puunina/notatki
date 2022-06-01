@@ -8,6 +8,17 @@ ls - lista plików i folderów
 -S sort by size
 -h human
 -F zaznacz foldery
+ls d* > listuje wszystko zaczynające się od "d"
+  *.txt
+  ??.txt >> określona długość
+  [] >>> do wyboru
+  file[1-9].txt
+
+touch {jan,feb,mar}_{2010,2011,2012,2013}/{1..200} >> kolejne foldery w każdym 200 plików
+mkdir {jan,feb,mar}_{2010,2011,2012,2013} >> same foldery
+
+cp file.txt file2.txt .   >>> kopia do aktulnego folderu(lub dowolna ściezka)
+cp -r kopia z zawartością
 
 cat file.txt  - wyświetla zawartość pliku
 
@@ -101,6 +112,54 @@ sudo systemctl status flaga
 '''
 
 '''
-nano ~./bash_aliases
+nano ~/.bash_aliases
+
+'''
+'''
+!! ostatnie polecenie
+!10 polecenie nr
+which eho > gdzie polecenie
+man -k szukanafraza
+man section(1-8) nameofpage
+help command > zamiast man
+
+rev letters backwards
+tac lines backwards
+
+
+chmod +x filename >> zmina uprawnień
+
+bash plik.sh > wywołuje
+
+apt-cache search program
+apt-co show name_of_package
+
+removing package:
+sudo apt-get purge name_of_package
+sudo apt-get autoremove >> will remove any dependencies that are no longer used
+sudo apt-get clean >> ges rid of archive files in /var/cacheapt/archivers
+sudo apt-get autoclean >> gets rid of files that are no longer available
+
+cal
+cal 2017 > kalendarz
+date
+date -u date universal time
+
+
+
+cat 2>> error.txt
+cat >>file.txt
+
+cat < text.txt >> reads file
+
+piping:
+date | cut --delimeter "" --fileds 1
+
+tee >>> data in to 2 directions (pipe and file)
+date | tee file.txt | cut --delimeter " " --field=1 >> date.txt
+(powyższa linia zapisuje 2 pliki)
+
+xargs - for piping which does not accept standar input e.g:
+date | xargs echo
 
 '''
